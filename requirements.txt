@@ -1,1 +1,1 @@
-netket
+mpi4py
