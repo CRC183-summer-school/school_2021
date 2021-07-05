@@ -19,7 +19,6 @@ RUN adduser --disabled-password \
     ${NB_USER}
 
 # Make sure the contents of our repo are in ${HOME}
-COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
@@ -27,5 +26,8 @@ USER ${NB_USER}
 RUN pip install --pre netket
 RUN pip install --no-cache-dir notebook==5.*
 RUN pip install --no-cache-dir jupyterhub
+
+WORKDIR . ${HOME}/crc183_summer_school_2021/
+COPY . . 
 
 ENTRYPOINT []
