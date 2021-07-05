@@ -5,7 +5,7 @@ RUN apt-get update \
 && apt-get install gcc -y \
 && apt-get clean
 
-ARG NB_USER=klaus
+ARG NB_USER=jovyan
 ARG NB_UID=1000
 ENV USER ${NB_USER}
 ENV NB_UID ${NB_UID}
@@ -23,3 +23,5 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
 RUN pip install --pre netket
+
+ENTRYPOINT []
