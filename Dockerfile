@@ -23,5 +23,7 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
 RUN pip install --pre netket
+RUN pip install --no-cache-dir notebook==5.*
+RUN pip install --no-cache-dir jupyterhub
 
 ENTRYPOINT []
